@@ -3,11 +3,37 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {combineReducers, createStore} from 'redux';
+import {Provider} from 'react-redux';
+
+
+const count = (status=0, action) => {
+  switch(action.type) {
+    default:
+      return status
+    }
+  }
+  
+  const characters = (status=[], action) => {
+    switch(action.type) {
+      case "GET_CHARACTERS":
+        return "hello world"
+        default:
+          return status
+        }
+      }
+      
+  const rootReducer = combineReducers({
+        count, 
+        characters
+      })
+      
+  const store = createStore(rootReducer)
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
