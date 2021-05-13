@@ -5,7 +5,7 @@ import {useEffect} from 'react';
 
 function App() {
   const dispatch = useDispatch()
-  const characters = useSelector(state => state.character)
+  const characters = useSelector(state => state.characters)
 
 
   useEffect(getCharacters, [])
@@ -18,9 +18,9 @@ function App() {
   function getCharacters() {
     fetch('https://rickandmortyapi.com/api/character/?page=7')
       .then(response => response.json())
-      .then(({result})=> dispatch({
+      .then(({results}) => dispatch({
         type: "GET_CHARACTERS",
-        characters: result
+        characters: results 
       }))
   }
   

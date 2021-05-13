@@ -17,7 +17,7 @@ const count = (status=0, action) => {
   const characters = (status=[], action) => {
     switch(action.type) {
       case "GET_CHARACTERS":
-        return "hello world"
+        return action.characters
         default:
           return status
         }
