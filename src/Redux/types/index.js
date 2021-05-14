@@ -1,1 +1,1 @@
-export const SET_CHARACTERS = 'SET_CHARACTERS'
+export const GET_CHARACTERS = 'SET_CHARACTERS'
